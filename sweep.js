@@ -1,0 +1,6 @@
+'use strict';
+(function(root){const Q=typeof module!=='undefined'&&module.exports?require('./engine.js'):root.QueueLab;
+ function run(config){Q.validate(config);const c=Object.fromEntries(['minutes','rate','service','seed','arrivals','services'].map(k=>[k,config[k]]));const jobs=Q.generate({...c,servers:1}),horizon=c.minutes*60,rows=[];for(let servers=1;servers<=8;servers++)for(const policy of ['pooled','separate']){const m=Q.simulate(jobs,servers,policy,horizon).metrics;rows.push({servers,policy,...m});}return {format:'queue-server-sweep',version:1,config:c,customerCount:jobs.length,rows};}
+ function csv(sweep){const header=['minutes','rate_per_minute','mean_service_seconds','seed','arrivals','services','servers','policy','customer_count','mean_wait_seconds','p95_wait_seconds','max_wait_seconds','completed_by_close','utilization','clear_at_seconds'];const c=sweep.config;return [header.join(','),...sweep.rows.map(r=>[c.minutes,c.rate,c.service,c.seed,c.arrivals,c.services,r.servers,r.policy,r.count,r.meanWait,r.p95Wait,r.maxWait,r.completedByClose,r.utilization,r.clearAt].join(','))].join('\r\n')+'\r\n';}
+ const api={run,csv};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.QueueSweep=Object.freeze(api);
+})(globalThis);

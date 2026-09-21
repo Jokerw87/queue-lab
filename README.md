@@ -1,4 +1,10 @@
-# 排队实验室 V1.3 / Queue Lab
+# 排队实验室 V1.4 / Queue Lab
+
+## V1.4 same-job server-count comparison
+
+Scroll to “同一批客流，1–8个服务台” and explicitly run the comparison. It generates one set of synthetic arrivals and service times, then compares 1–8 servers under both queue policies (16 scenarios). The upper server-count field controls only the original single comparison. Export a separate CSV with full numeric precision; displayed numbers are rounded. Editing parameters, recomputing, resetting or successfully importing a project clears old sweep results. Nothing auto-runs this sweep.
+
+This is not a staffing recommendation, cost optimizer or revenue forecast. Separate-queue results need not improve monotonically. No customers means zero measured waits, not proven good service. Original simulator unchanged. See SWEEP_RESULTS.md for actual checks and limits.
 
 ## Save and reopen an experiment
 

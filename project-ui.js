@@ -20,3 +20,4 @@ projectInput.onchange=async()=>{
  }catch(e){projectStatus.textContent='导入失败：'+e.message+' 当前设置和结果未替换。';}
  finally{projectReading=false;projectControls();}
 };projectControls();
+const sweepModule=document.createElement('script');sweepModule.src='sweep.js';sweepModule.onload=()=>{const ui=document.createElement('script');ui.src='sweep-ui.js';document.head.append(ui);};document.head.append(sweepModule);

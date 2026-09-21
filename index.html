@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>排队实验室 · Queue Lab</title><link rel="stylesheet" href="style.css"><script src="engine.js" defer></script><script src="app.js" defer></script></head>
+<body><header><p class="kicker">COUNTER STUDIES / 01</p><h1>同一批人，<br>两种排法。</h1><p>一个离线的排队思想实验。改变客流、窗口与服务时间，看看等待怎样出现。</p><span class="badge">虚构模拟 · 非门店预测</span></header>
+<main><aside><h2>设置这个下午</h2><form id="settings">
+<label>模拟时长（分钟）<input id="minutes" type="number" min="5" max="120" value="30" required></label>
+<label>平均每分钟到达人数<input id="rate" type="number" min="0" max="20" step="0.1" value="3" required></label>
+<label>平均服务时间（秒/人）<input id="service" type="number" min="5" max="300" value="50" required></label>
+<label>开放窗口<input id="servers" type="number" min="1" max="8" value="3" required></label>
+<label>到达方式<select id="arrivals"><option value="random">随机间隔（指数分布）</option><option value="regular">均匀间隔</option></select></label>
+<label>服务时间<select id="services"><option value="random">有快有慢（指数分布）</option><option value="fixed">每个人一样长</option></select></label>
+<label>随机种子<input id="seed" type="number" min="0" max="4294967295" value="2026" required></label>
+<button class="primary" type="submit">比较两种排法 →</button></form>
+<p class="small">同样参数与种子得到同样的虚构顾客。两种排法共用每位顾客的到达时间及服务时长。</p><button id="reset">恢复示例设置</button></aside>
+<section class="results"><div id="status" role="status" aria-live="polite">准备计算</div><div id="cards" class="cards"></div><h2>等待队列随时间变化</h2><p class="small">不含正在服务的人。实线：共用队列；虚线：独立队列。竖线标记停止接收新顾客的时刻，之后继续服务直至清空。</p><canvas id="chart" width="1100" height="460" aria-label="等待队列时间图；对应数值可通过CSV导出">请查看指标和CSV数据。</canvas>
+<div class="actions"><button id="csv">导出逐人 CSV</button><button id="json">导出完整 JSON</button><button id="png">保存图表 PNG</button></div>
+<details open><summary>这张图没有告诉你的事</summary><p>共用队列遵循先到先服务，空出的窗口接下一位；独立队列在顾客到达时选择当前人数最少的窗口（包括正在服务的人），同人数选编号小的窗口，不再换队。</p><p>不考虑离队、插队、窗口休息、员工差异或真实客流。P95采用最近秩法；等待统计包括关门后才被服务的顾客。窗口忙碌率只计算营业时段。队列峰值覆盖清空全过程。单次随机结果不代表长期平均，更不能直接决定排班或承诺收益。</p></details></section></main><footer>本地计算 · 不上传数据 · 不保存设置 · 无账号或外部依赖</footer></body></html>

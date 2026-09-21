@@ -1,4 +1,12 @@
-# 排队实验室 V1.2 / Queue Lab
+# 排队实验室 V1.3 / Queue Lab
+
+## Save and reopen an experiment
+
+After computing, use“保存参数项目 JSON”to download queue-project.json. Reopen using the project import field, confirm replacement, and all results are recalculated locally. Only seven simulation parameters are saved. Timeline selection resets to customer1; the wait-distribution threshold stays at its current value. Parameter edits disable saving until recomputation. No automatic persistence.
+
+Project files are limited to8KiB and strict versioned JSON. Unknown fields, computed results, incorrect types and invalid ranges are rejected without replacing current state. The old“完整 JSON”export remains a results report and cannot be imported as a parameter project. See PROJECT_FORMAT.md. example-project.json is a fictional regular-arrival scenario, not customer evidence. Try it through the import button.
+
+Additional development checks: node test-project.cjs, node test-project-browser.cjs and node test-project-layout.cjs with existing Playwright. No dependency installation is needed to use the tool.
 
 ## V1.2 customer timeline
 

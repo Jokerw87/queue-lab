@@ -4,3 +4,6 @@ node_modules/
 timeline-evidence/
 timeline-pixel-evidence/
 timeline-pixel-distinct-evidence/
+project-evidence/
+project-browser-evidence/
+project-layout-evidence/

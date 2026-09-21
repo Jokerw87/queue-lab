@@ -1,4 +1,8 @@
-# V1.2 actual verification — 2026-09-22
+# V1.3 actual verification — 2026-09-22
+
+V1.3 adds11 actual check groups: four Node parser/serializer groups (complete simulation equality, strict schema/type/version/bounds, UTF8 byte limit, valid numeric boundaries); four desktop Chromium browser groups (actual saved file reimport equality, invalid/oversize preservation, cancel preserves unsaved settings, delayed read disables duplicate import/save); three browser groups (bundled fictional example recomputes19 customers with zero pooled wait,1360/390px no page overflow, empty project stays saveable with empty timeline). No HTTP requests/page errors in roundtrip suite. Layout screenshots visually inspected, labels and controls readable. No physical mobile or independent-model review. V1.3 publication pending at record creation.
+
+Below are inherited V1.2/V1.1 checks, not rerun as V1.3 full regression suites. Simulator source was not edited for project support.
 
 New V1.2 checks in desktop Chromium151.0.7922.34: four timeline browser groups pass (binding displayed times to both record arrays; invalid ID nonmutation; real PNG download/decode; stale/empty/recompute recovery offline with no HTTP requests or page errors).
 

@@ -1,0 +1,13 @@
+{
+  "format": "queue-lab-project",
+  "version": 1,
+  "config": {
+    "minutes": 10,
+    "rate": 2,
+    "service": 50,
+    "servers": 2,
+    "seed": 2026,
+    "arrivals": "regular",
+    "services": "fixed"
+  }
+}

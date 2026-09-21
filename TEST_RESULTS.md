@@ -1,4 +1,10 @@
-# V1.1 actual verification — 2026-09-22
+# V1.2 actual verification — 2026-09-22
+
+New V1.2 checks in desktop Chromium151.0.7922.34: four timeline browser groups pass (binding displayed times to both record arrays; invalid ID nonmutation; real PNG download/decode; stale/empty/recompute recovery offline with no HTTP requests or page errors).
+
+Four additional checks pass: a customer with different waits under both policies has1739 checked interior pixels matching source-time geometry and colors; downloaded PNG is byte-equal to preview;390px viewport has no horizontal page overflow; unchanged engine SHA256 matches the inherited baseline. Anti-aliased boundary pixels excluded. An earlier equality-case run checked1742 pixels; final script deliberately selects a differing-wait case. Evidence preserved separately, not added together as independent tests.
+
+Same-agent visual review of exported chart and narrow screenshot: labels readable in full-size export, narrow chart compact with readable numeric details below. This is not mobile hardware or independent-model review. No actual retail data used. Publication pending at record creation. Below is inheritedV1.1 evidence, not newly rerun.
 
 V1.1: syntax checks passed; nine new distribution groups plus six affected existing browser groups passed in real local Chromium. The unchanged engine SHA-256 is `404f3c31363be2d2650f943fcc0e89545ed4984dca8e33c15c87be81ccdf5655`; its seven passing V1 engine groups are inherited evidence, not rerun or counted as new checks.
 

@@ -1,4 +1,10 @@
-# 排队实验室 V1.1 / Queue Lab
+# 排队实验室 V1.2 / Queue Lab
+
+## V1.2 customer timeline
+
+Choose a customer number to see arrival, waiting, service and assigned window under both policies on one common time axis. Orange is waiting; green is service. Numeric details show seconds to three decimals. The selected customer's later completion sets the axis extent; changing customers rescales the image, so do not compare raw bar lengths across exports. Zero waiting has no orange bar. These are synthetic records, not observed customer behavior.
+
+Export the selected1100x300 PNG for readable detail. Invalid IDs and empty runs clear the timeline and disable its export. Parameter edits invalidate it until recomputation. Customer selection does not regenerate arrivals or service times. This version leaves the simulator unchanged. Additional checks: test-timeline.cjs and test-timeline-pixels.cjs, using existing Playwright as described below.
 
 A small, independently implemented offline experiment comparing one shared FCFS queue with shortest-headcount separate queues. Both policies receive the exact same synthetic arrivals and per-customer service durations. No real customer data, APIs, dependencies, telemetry or persistence.
 

@@ -1,3 +1,6 @@
 test-output/
 node_modules/
 .agent-handoff/
+timeline-evidence/
+timeline-pixel-evidence/
+timeline-pixel-distinct-evidence/

@@ -1,5 +1,9 @@
 # 排队实验室 V1.4 / Queue Lab
 
+![同一批虚构顾客在两种排队规则下的指标和等待队列曲线](preview.png)
+
+实际桌面浏览器截图，仅为默认种子的虚构模拟，不是门店实测，也不能据此承诺排班收益。下载完整仓库并解压，用桌面浏览器打开同目录的 `index.html`；无需安装依赖、注册账号或提供真实数据。不要只下载HTML，也不要直接在ZIP预览中运行。此仓库提供离线工具源码，不是在线托管应用。
+
 ## V1.4 same-job server-count comparison
 
 Scroll to “同一批客流，1–8个服务台” and explicitly run the comparison. It generates one set of synthetic arrivals and service times, then compares 1–8 servers under both queue policies (16 scenarios). The upper server-count field controls only the original single comparison. Export a separate CSV with full numeric precision; displayed numbers are rounded. Editing parameters, recomputing, resetting or successfully importing a project clears old sweep results. Nothing auto-runs this sweep.
